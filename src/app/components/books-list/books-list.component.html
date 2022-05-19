@@ -1,0 +1,42 @@
+<div class="container mt-3">
+  <div
+    class="d-flex justify-content between flex-wrap flex-md-nowrap align-items-center pt-2 pb-2 mb-3 border-bottom"
+  >
+    <h1>Books List</h1>
+  </div>
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">ຊື່</th>
+          <th scope="col">ໝວດທັມ</th>
+          <th scope="col">ພຣະສູດ</th>
+          <th class="text-center" scope="col">Active</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of Books; let i = index">
+          <th scope="row">{{ book._id }}</th>
+          <td>{{ book.name }}</td>
+          <td>{{ book.price }}</td>
+          <td>{{ book.description }}</td>
+          <td class="text-center">
+            <button
+              class="btn btn-sm btn-primary"
+              ng-click="toggleActive(book)"
+              routerLink="/edit-book/{{ book._id }}"
+            >
+              Edit
+              <i class="fa fa-check" *ngIf="book.active"></i>
+              <i class="fa fa-times" *ngIf="!book.active"></i>
+            </button>
+            <button class="btn btn-sm btn-danger" (click)="delete(book._id, i)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="container mt-3">
+  <h1>Update Data</h1>
+  <div class="row justify-content center mt-3">
+    <div class="col-md-12">
+      <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+        <div class="from-group mb-3">
+          <label for="name">ຊື່</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="name"
+            placeholder="ຊື່"
+            aria-label="ຊື່"
+          />
+        </div>
+        <div class="from-group mb-3">
+          <label for="price">ໝວດທັມ</label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="price"
+            placeholder="ໝວດທັມ"
+            aria-label="ໝວດທັມ"
+          />
+        </div>
+        <div class="from-group mb-3">
+          <label for="description">ພຣະສູດ</label>
+          <textarea
+            type="text"
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="3"
+            formControlName="description"
+            placeholder="ພຣະສູດ"
+            aria-label="ພຣະສູດ"
+            required
+          ></textarea>
+        </div>
+        <div class="from-group">
+          <button class="btn btn-primary btn-block" type="submit">
+            Update
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
